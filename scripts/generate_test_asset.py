@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1350
-OUT = Path("instagram/2026-09-30-input-chain.jpg")
+OUT = Path("instagram/2026-09-30-input-chain-v2.jpg")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 im = Image.new("RGB", (W, H), (8, 8, 8))
