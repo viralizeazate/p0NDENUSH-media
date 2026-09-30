@@ -1,0 +1,56 @@
+name: Generate Instagram test asset
+
+on:
+  push:
+    paths:
+      - "scripts/generate_test_asset.py"
+      - ".github/workflows/generate-test.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: python -m pip install Pillow==11.3.0
+
+      - name: Generate baseline JPEG
+        run: python scripts/generate_test_asset.py
+
+      - name: Verify image
+        run: |
+          file instagram/2026-09-30-input-chain.jpg
+          python - <<'PY'
+          from PIL import Image
+          p = 'instagram/2026-09-30-input-chain.jpg'
+          im = Image.open(p)
+          assert im.format == 'JPEG'
+          assert im.mode == 'RGB'
+          assert im.size == (1080, 1350)
+          print(im.format, im.mode, im.size)
+          PY
+
+      - name: Commit generated asset
+        run: |
+          if git diff --quiet -- instagram/2026-09-30-input-chain.jpg; then
+            echo "Asset unchanged."
+            exit 0
+          fi
+          git config user.name "p0NDENUSH Media Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add instagram/2026-09-30-input-chain.jpg
+          git commit -m "Regenerate Instagram test asset as baseline JPEG"
+          git push
