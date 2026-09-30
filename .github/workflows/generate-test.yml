@@ -33,10 +33,10 @@ jobs:
 
       - name: Verify image
         run: |
-          file instagram/2026-09-30-input-chain.jpg
+          file instagram/2026-09-30-input-chain-v2.jpg
           python - <<'PY'
           from PIL import Image
-          p = 'instagram/2026-09-30-input-chain.jpg'
+          p = 'instagram/2026-09-30-input-chain-v2.jpg'
           im = Image.open(p)
           assert im.format == 'JPEG'
           assert im.mode == 'RGB'
@@ -46,12 +46,12 @@ jobs:
 
       - name: Commit generated asset
         run: |
-          if git diff --quiet -- instagram/2026-09-30-input-chain.jpg; then
+          if git diff --quiet -- instagram/2026-09-30-input-chain-v2.jpg && git ls-files --error-unmatch instagram/2026-09-30-input-chain-v2.jpg >/dev/null 2>&1; then
             echo "Asset unchanged."
             exit 0
           fi
           git config user.name "p0NDENUSH Media Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add instagram/2026-09-30-input-chain.jpg
-          git commit -m "Regenerate Instagram test asset as baseline JPEG"
+          git add instagram/2026-09-30-input-chain-v2.jpg
+          git commit -m "Add cache-busted Instagram test JPEG"
           git push
