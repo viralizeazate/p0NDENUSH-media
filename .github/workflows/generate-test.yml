@@ -1,6 +1,7 @@
 name: Generate Instagram test asset
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "scripts/generate_test_asset.py"
