@@ -7,8 +7,9 @@ on:
       - "scripts/generate_autopilot_assets.py"
       - ".github/workflows/autopilot-media.yml"
   schedule:
-    - cron: "12 2,8,14,20 * * *"
-      timezone: "Europe/Bucharest"
+    # Rolling buffer generation does not depend on local wall-clock time. Use a
+    # plain UTC cron to keep the trigger surface as small and portable as possible.
+    - cron: "13 0,6,12,18 * * *"
 
 permissions:
   contents: write
