@@ -5,10 +5,12 @@ on:
   push:
     paths:
       - "scripts/generate_autopilot_assets.py"
+      - "external_media_tick.txt"
       - ".github/workflows/autopilot-media.yml"
   schedule:
-    # Rolling buffer generation does not depend on local wall-clock time. Use a
-    # plain UTC cron to keep the trigger surface as small and portable as possible.
+    # Keep GitHub cron as best-effort. External scheduler heartbeats can also
+    # trigger this workflow through external_media_tick.txt when schedule events
+    # are delayed or dropped.
     - cron: "13 0,6,12,18 * * *"
 
 permissions:
