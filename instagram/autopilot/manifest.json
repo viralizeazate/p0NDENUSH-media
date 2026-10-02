@@ -1,15 +1,9 @@
 {
   "style_version": 1,
   "timezone": "Europe/Bucharest",
-  "start": "2026-10-02",
+  "start": "2026-10-03",
   "days": 14,
   "assets": [
-    {
-      "date": "2026-10-02",
-      "pillar": "testing_method",
-      "feed": "instagram/autopilot/2026-10-02-feed.jpg",
-      "story": "instagram/autopilot/2026-10-02-story.jpg"
-    },
     {
       "date": "2026-10-03",
       "pillar": "cs16_authority",
@@ -87,6 +81,12 @@
       "pillar": "system_chain",
       "feed": "instagram/autopilot/2026-10-15-feed.jpg",
       "story": "instagram/autopilot/2026-10-15-story.jpg"
+    },
+    {
+      "date": "2026-10-16",
+      "pillar": "input_latency",
+      "feed": "instagram/autopilot/2026-10-16-feed.jpg",
+      "story": "instagram/autopilot/2026-10-16-story.jpg"
     }
   ]
 }
