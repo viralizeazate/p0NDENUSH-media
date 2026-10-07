@@ -1,15 +1,9 @@
 {
   "style_version": 1,
   "timezone": "Europe/Bucharest",
-  "start": "2026-10-06",
+  "start": "2026-10-07",
   "days": 14,
   "assets": [
-    {
-      "date": "2026-10-06",
-      "pillar": "myth_busting",
-      "feed": "instagram/autopilot/2026-10-06-feed.jpg",
-      "story": "instagram/autopilot/2026-10-06-story.jpg"
-    },
     {
       "date": "2026-10-07",
       "pillar": "system_chain",
@@ -87,6 +81,12 @@
       "pillar": "cs16_authority",
       "feed": "instagram/autopilot/2026-10-19-feed.jpg",
       "story": "instagram/autopilot/2026-10-19-story.jpg"
+    },
+    {
+      "date": "2026-10-20",
+      "pillar": "pc_optimization",
+      "feed": "instagram/autopilot/2026-10-20-feed.jpg",
+      "story": "instagram/autopilot/2026-10-20-story.jpg"
     }
   ]
 }
