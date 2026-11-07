@@ -1,15 +1,9 @@
 {
   "style_version": 1,
   "timezone": "Europe/Bucharest",
-  "start": "2026-11-06",
+  "start": "2026-11-07",
   "days": 14,
   "assets": [
-    {
-      "date": "2026-11-06",
-      "pillar": "competitive_setup",
-      "feed": "instagram/autopilot/2026-11-06-feed.jpg",
-      "story": "instagram/autopilot/2026-11-06-story.jpg"
-    },
     {
       "date": "2026-11-07",
       "pillar": "myth_busting",
@@ -87,6 +81,12 @@
       "pillar": "testing_method",
       "feed": "instagram/autopilot/2026-11-19-feed.jpg",
       "story": "instagram/autopilot/2026-11-19-story.jpg"
+    },
+    {
+      "date": "2026-11-20",
+      "pillar": "cs16_authority",
+      "feed": "instagram/autopilot/2026-11-20-feed.jpg",
+      "story": "instagram/autopilot/2026-11-20-story.jpg"
     }
   ]
 }
